@@ -59,6 +59,7 @@ jobs:
       with:
         php-version: ${{ matrix.php }}
         coverage: none
+        tools: composer:v2
         
     - name: Install dependencies
       run: |
@@ -85,7 +86,8 @@ jobs:
         with:
           php-version: 7.4
           coverage: none
-        
+          tools: composer:v2
+       
       - name: Install dependencies
         run: |
           composer remove phpro/grumphp vimeo/psalm --no-update --dev
