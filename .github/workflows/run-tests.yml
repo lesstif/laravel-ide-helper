@@ -60,6 +60,7 @@ jobs:
        
       - name: Install dependencies
         run: |
+          composer self-update --snapshot
           composer remove phpro/grumphp vimeo/psalm --no-update --dev
           composer update --prefer-dist --no-progress
 
