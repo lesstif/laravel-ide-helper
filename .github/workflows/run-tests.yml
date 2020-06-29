@@ -63,7 +63,7 @@ jobs:
         
     - name: Install dependencies
       run: |
-        composer self-update --2 --snapshot
+        composer self-update --snapshot
         composer remove phpro/grumphp vimeo/psalm --no-update --dev
         composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-update --no-progress
         composer update --${{ matrix.dependency-version }} --prefer-dist --no-progress
