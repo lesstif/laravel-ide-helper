@@ -826,7 +826,9 @@ class ModelsCommand extends Command
             }
         }
 
-        $output = "namespace {$namespace}{\n{$docComment}\n\t{$keyword}class {$classname} extends \Eloquent ";
+        $parent_class = get_parent_class ($class);
+
+        $output = "namespace {$namespace}{\n{$docComment}\n\t{$keyword}class {$classname} extends \\$parent_class ";
 
         if ($interfaceNames) {
             $interfaces = implode(', \\', $interfaceNames);
